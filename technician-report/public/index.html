@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technician Report Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+  <h1>Technician Report Form</h1>
+  <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+</div>
+
+
+    <form id="reportForm" novalidate>
+      <label for="location">Location:</label>
+      <input type="text" id="location" placeholder="Enter location" required />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required />
+
+      <label for="machineNumber">Machine Number:</label>
+      <input type="text" id="machineNumber" placeholder="Enter machine number" required />
+
+      <label for="technicianName">Technician Name:</label>
+      <input type="text" id="technicianName" placeholder="Enter technician name" required />
+
+      <label for="problemSolved">Problem Solved:</label>
+      <textarea id="problemSolved" rows="3" placeholder="Describe the problem solved" required></textarea>
+
+      <button type="submit" aria-label="Submit report">Submit</button>
+    </form>
+
+    <a href="view.html" class="view-btn" aria-label="View submitted reports">View Reports</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

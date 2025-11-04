@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Reports</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Technician Reports</h1>
+    <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+
+    <div class="btn-group">
+      <a href="index.html" class="back-btn">Back</a>
+      <a href="/download" class="download-btn">Download Excel</a>
+    </div>
+
+    <table id="reportTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Location</th>
+          <th>Date</th>
+          <th>Machine #</th>
+          <th>Technician</th>
+          <th>Problem Solved</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="view.js"></script>
+</body>
+</html>

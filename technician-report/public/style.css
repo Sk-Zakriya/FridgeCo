@@ -1,0 +1,321 @@
+/* 🌐 Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🎨 Base Styles */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #f3f4f6, #e9ebee);
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* 🧱 Container */
+.container {
+  width: 90%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 40px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 🧭 Header Alignment */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #222;
+  text-align: center;
+  transition: color 0.4s ease;
+}
+
+/* 🌙 Dark Mode Toggle */
+.theme-toggle {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.theme-toggle:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* 🧾 Form */
+form {
+  margin-top: 10px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 12px;
+  color: #333;
+  transition: color 0.4s ease;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #fff;
+  color: #222;
+  transition: all 0.3s ease;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* 🖱️ Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #007bff;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: #0056b3;
+}
+
+/* 🔗 Navigation Buttons */
+.view-btn,
+.back-btn,
+.download-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 12px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.view-btn {
+  background: #28a745;
+  color: #fff;
+}
+.back-btn {
+  background: #6c757d;
+  color: #fff;
+}
+.download-btn {
+  background: #ffc107;
+  color: #000;
+}
+.view-btn:hover,
+.back-btn:hover,
+.download-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* 🧮 Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+th {
+  background: #007bff;
+  color: #fff;
+}
+
+/* 📱 Responsive Tables */
+@media (max-width: 600px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    background: #fff;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #007bff;
+  }
+
+  td:last-child {
+    border-bottom: none;
+  }
+}
+
+/* 🧠 Responsive Container */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 700px;
+    padding: 25px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .theme-toggle {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  button,
+  .view-btn,
+  .back-btn,
+  .download-btn {
+    font-size: 0.95rem;
+  }
+}
+
+/* 🌗 Dark Mode — Improved Visibility */
+body.dark-mode {
+  background: linear-gradient(135deg, #0e0e0e, #1b1b1b);
+  color: #f5f5f5;
+}
+
+body.dark-mode .container {
+  background: #262626;
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode h1,
+body.dark-mode label {
+  color: #f5f5f5;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #333;
+  color: #f9f9f9;
+  border: 1px solid #666;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+  border-color: #4e9eff;
+  box-shadow: 0 0 5px rgba(78, 158, 255, 0.5);
+}
+
+body.dark-mode button {
+  background: #4e9eff;
+}
+
+body.dark-mode .view-btn {
+  background: #34c759;
+}
+
+body.dark-mode .back-btn {
+  background: #999;
+}
+
+body.dark-mode .download-btn {
+  background: #ffc107;
+  color: #000;
+}
+
+body.dark-mode th {
+  background: #4e9eff;
+}
+
+body.dark-mode td {
+  border-color: #555;
+  color: #eee;
+}
+
+body.dark-mode td::before {
+  color: #4e9eff;
+}
+
+/* 🪄 Fade Animation */
+body.fade-theme {
+  animation: fadeTheme 0.3s ease-in-out;
+}
+
+@keyframes fadeTheme {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
