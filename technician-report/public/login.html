@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Technician Report</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Login</h1>
+      <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+    </div>
+
+    <form id="loginForm" novalidate>
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Enter username" required autofocus />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter password" required />
+
+      <button type="submit" aria-label="Login">Login</button>
+    </form>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <p>Don't have an account? <a href="signup.html" style="color: #4CAF50;">Sign up here</a></p>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

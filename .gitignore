@@ -13,6 +13,9 @@ yarn-error.log*
 *.db
 *.db-journal
 
+# Session databases
+sessions.db
+
 # Excel files generated
 *.xlsx
 

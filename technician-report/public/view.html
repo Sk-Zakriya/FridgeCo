@@ -8,8 +8,14 @@
 </head>
 <body>
   <div class="container">
-    <h1>Technician Reports</h1>
-    <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+    <div class="header">
+      <h1>Technician Reports</h1>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <span id="userDisplay" style="margin-right: 10px; font-weight: 500;"></span>
+        <button id="logoutBtn" class="theme-toggle" style="background: #f44336;">Logout</button>
+        <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+      </div>
+    </div>
 
     <div class="btn-group">
       <a href="index.html" class="back-btn">Back</a>

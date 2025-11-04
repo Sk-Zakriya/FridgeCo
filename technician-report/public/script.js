@@ -1,3 +1,41 @@
+// ========== Authentication Check ==========
+async function checkAuth() {
+  try {
+    const res = await fetch("/api/auth/check");
+    const data = await res.json();
+    
+    if (!data.authenticated) {
+      window.location.href = "login.html";
+      return false;
+    }
+    
+    // Display username
+    const userDisplay = document.getElementById("userDisplay");
+    if (userDisplay) {
+      userDisplay.textContent = `Welcome, ${data.username}`;
+    }
+    
+    return true;
+  } catch (error) {
+    window.location.href = "login.html";
+    return false;
+  }
+}
+
+// ========== Logout Handler ==========
+const logoutBtn = document.getElementById("logoutBtn");
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", async () => {
+    try {
+      await fetch("/api/logout", { method: "POST" });
+      window.location.href = "login.html";
+    } catch (error) {
+      console.error("Logout error:", error);
+      window.location.href = "login.html";
+    }
+  });
+}
+
 // ========== Technician Report Form Handler ==========
 document.getElementById("reportForm").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -16,6 +54,12 @@ document.getElementById("reportForm").addEventListener("submit", async (e) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
+
+    if (res.status === 401) {
+      alert("Session expired. Please log in again.");
+      window.location.href = "login.html";
+      return;
+    }
 
     const result = await res.json();
     alert(result.message);
@@ -59,3 +103,6 @@ toggleButton.addEventListener("click", () => {
     document.body.classList.remove("fade-theme");
   }, 150);
 });
+
+// Check auth on page load
+checkAuth();

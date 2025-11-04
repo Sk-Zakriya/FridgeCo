@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Technician Report</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Create Account</h1>
+      <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+    </div>
+
+    <form id="signupForm" novalidate>
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Choose a username" required autofocus />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Choose a password (min 6 characters)" required />
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" placeholder="Confirm your password" required />
+
+      <button type="submit" aria-label="Sign up">Sign Up</button>
+    </form>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <p>Already have an account? <a href="login.html" style="color: #4CAF50;">Login here</a></p>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

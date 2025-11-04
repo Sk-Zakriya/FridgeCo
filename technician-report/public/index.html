@@ -9,10 +9,13 @@
 <body>
   <div class="container">
     <div class="header">
-  <h1>Technician Report Form</h1>
-  <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
-</div>
-
+      <h1>Technician Report Form</h1>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <span id="userDisplay" style="margin-right: 10px; font-weight: 500;"></span>
+        <button id="logoutBtn" class="theme-toggle" style="background: #f44336;">Logout</button>
+        <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+      </div>
+    </div>
 
     <form id="reportForm" novalidate>
       <label for="location">Location:</label>
